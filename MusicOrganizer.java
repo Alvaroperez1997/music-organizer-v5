@@ -183,4 +183,14 @@ public class MusicOrganizer
             }
         }
     }
+    
+    /**
+     * Metodo que permite fijar el valor del album en el organizador
+     */
+    public void setAlbum(int index, String albumName) {
+        if(indexValid(index)) {
+            Track track = tracks.get(index);
+            albumName = track.getAlbum();
+        }
+    }
 }

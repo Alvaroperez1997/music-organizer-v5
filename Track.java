@@ -15,6 +15,8 @@ public class Track
     private String filename;
     // LLeva la cuenta de las veces que se reproduce una cancion
     private int playCount;
+    // Album del Track
+    private String album;
     
     /**
      * Constructor for objects of class Track.
@@ -22,9 +24,9 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    public Track(String artist, String title, String filename)
+    public Track(String artist, String title, String filename, String album)
     {
-        setDetails(artist, title, filename);
+        setDetails(artist, title, filename, album);
         playCount = 0;
     }
     
@@ -36,7 +38,8 @@ public class Track
      */
     public Track(String filename)
     {
-        setDetails("unknown", "unknown", filename);
+        setDetails("unknown", "unknown", filename, "unknown");
+        playCount = 0;
     }
     
     /**
@@ -75,6 +78,14 @@ public class Track
     }
     
     /**
+     * Devuelve el album del track
+     */
+    public String getAlbum()
+    {
+        return album;
+    }
+    
+    /**
      * Metodo que resetea el contador de canciones reproducidas
      */
     public void resetPlayCount() {
@@ -94,7 +105,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")" + "Veces reproducidas: " + playCount;
+        return artist + ": " + title + album + "  (file: " + filename + ")" + "Veces reproducidas: " + playCount;
     }
     
     /**
@@ -103,10 +114,15 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    private void setDetails(String artist, String title, String filename)
+    private void setDetails(String artist, String title, String filename, String album)
     {
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        this.album = album;
+    }
+    
+    public void setAlbum(String album) {
+        this.album = album;
     }
 }
