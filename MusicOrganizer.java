@@ -53,11 +53,11 @@ public class MusicOrganizer
      */
     public void playTrack(int index)
     {
-        int contador;
         if(indexValid(index)) {
             Track track = tracks.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+            track.incrementPlayCount();
         }
     }
     

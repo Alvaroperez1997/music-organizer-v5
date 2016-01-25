@@ -73,6 +73,20 @@ public class Track
     {
         return playCount;
     }
+    
+    /**
+     * Metodo que resetea el contador de canciones reproducidas
+     */
+    public void resetPlayCount() {
+        playCount = 0;
+    }
+    
+    /**
+     * Metodo que incrementa de uno en uno la cancion reproducida
+     */
+    public void incrementPlayCount() {
+        playCount++;
+    }
         
     /**
      * Return details of the track: artist, title and file name.
@@ -80,7 +94,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")";
+        return artist + ": " + title + "  (file: " + filename + ")" + "Veces reproducidas: " + playCount;
     }
     
     /**
