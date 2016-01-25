@@ -170,4 +170,16 @@ public class MusicOrganizer
             addTrack(track);
         }
     }
+    
+    /**
+     * Metodo que permite recibir un parametro que busca el titulo
+     * de un track e imprime por pantalla sus detalles
+     */
+    public void findInTitle(String titlename) {
+        for (Track track : tracks) {
+            if(track.getTitle().contains(titlename)) {
+                System.out.println(track.getDetails());
+            }
+        }
+    }
 }
