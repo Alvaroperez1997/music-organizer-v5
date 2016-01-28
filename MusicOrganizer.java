@@ -219,4 +219,18 @@ public class MusicOrganizer
             }
         }
     }
+    
+    /**
+     * Metodo que permite eliminar un track que tenga como parametro el titulo pasado
+     * con un iterator
+     */
+    public void removeByTitle(String nombreTitulo) {
+        Iterator <Track> it = tracks.iterator();
+        while (it.hasNext()) {
+            Track tracks = it.next();
+            if (tracks.getTitle().contains(nombreTitulo)) {
+                it.remove();
+            }
+        }
+    }
 }
