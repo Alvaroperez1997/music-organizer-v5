@@ -205,4 +205,18 @@ public class MusicOrganizer
             System.out.println(tracks.getDetails());
         }
     }
+    
+    /**
+     * Metodo que permite eliminar un track que tenga como parametro el artista pasado
+     * con un iterator
+     */
+    public void removeByArtist(String nombreArtista) {
+        Iterator <Track> it = tracks.iterator();
+        while (it.hasNext()) {
+            Track tracks = it.next();
+            if (tracks.getArtist().contains(nombreArtista)) {
+                it.remove();
+            }
+        }
+    }
 }
