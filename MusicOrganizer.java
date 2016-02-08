@@ -247,4 +247,18 @@ public class MusicOrganizer
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
         }
     }
+    
+    /**
+     * Metodo que permite reproducir los primeros segundos de una cancion en modo alatorio
+     */
+    public void playShuffle () {
+        Random  rnd = new Random();
+        int index = (rnd.nextInt(tracks.size()));
+        if(indexValid(index)) {
+            Track track = tracks.get(index);
+            player.startPlaying(track.getFilename());
+            System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+            track.incrementPlayCount();
+        }
+    }
 }
